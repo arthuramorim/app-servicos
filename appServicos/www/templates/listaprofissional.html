@@ -1,0 +1,34 @@
+
+<ion-view title="Profissionais" id="page1">
+<div class="spacer" style="width: 300px; height: 42px;"></div>
+<label class="item item-input" id="profissional-search1">
+        <i class="icon ion-search placeholder-icon"></i>
+        <input type="search" placeholder="Buscar" ng-model="buscaProfissional">
+      </label>
+  <ion-content padding="true" class="has-header">
+    
+      <div class="spacer" style="width: 300px; height: 42px;"></div>
+      
+      <ion-list>
+       <div ng-repeat="profissional in profissionais | filter:buscaProfissional" style="padding-bottom: 20px;" ui-sref="menu.perfilprofissional({usuario_id:profissional.usuario_id})">
+           <ion-item  class ="item item-avatar" style="min-height:100px; padding-left:100px;" >
+              
+              <img src ="http://localhost/appservicos/api/public/img/perfil/{{profissional.img_perfil}}" style="max-width: 70px;max-height: 70px;width: 100%;height: 100%;border-radius: 0;">
+              {{profissional.nome}}<br>
+              <h4 >
+                  <i ng-if="1 <= (profissional.estrelas/profissional.quantidade)" class="icon icon ion-star energized"></i>
+                  <i ng-if="2 <= (profissional.estrelas/profissional.quantidade)" class="icon icon ion-star energized"></i>
+                  <i ng-if="3 <= (profissional.estrelas/profissional.quantidade)" class="icon icon ion-star energized"></i>
+                  <i ng-if="4 <= (profissional.estrelas/profissional.quantidade)" class="icon icon ion-star energized"></i>
+                  <i ng-if="5 <= (profissional.estrelas/profissional.quantidade)" class="icon icon ion-star energized"></i>
+                  <h5>Contratado: {{profissional.quantidade}}x</h5>
+              </h4>
+
+
+           </ion-item>
+        </div>
+      </ion-list>
+  </ion-content>
+</ion-view>
+
+

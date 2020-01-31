@@ -1,0 +1,42 @@
+<ion-side-menus enable-menu-with-back-views="false">
+  <ion-side-menu-content>
+    <ion-nav-bar class="bar-stable">
+      <ion-nav-back-button></ion-nav-back-button>
+      <ion-nav-buttons side="left">
+        <button class="button button-icon button-clear ion-navicon" menu-toggle="left"></button>
+      </ion-nav-buttons>
+    </ion-nav-bar>
+    <ion-nav-view name="side-menu21"></ion-nav-view>
+  </ion-side-menu-content>
+  <ion-side-menu side="left" id="side-menu21">
+    <ion-header-bar class="bar-stable">
+      <div class="title">Menu</div>
+    </ion-header-bar>
+    <ion-content padding="false" class="side-menu-left has-header ">
+      <ion-list id="menu-list1">
+        <ion-item class="item-icon-right" id="menu-list-item1" ui-sref="menu.buscaservico"  menu-close="">Buscar
+        <h5>Encontre um profissional qualificado</h5>
+          <i class="icon ion-ios-search-strong calm"></i>
+        </ion-item>
+        <ion-item class="item-icon-right" id="menu-list-item1" ui-sref="menu.buscaservico"  menu-close="">Contratos
+        <h5>Todos os serviços solicitados</h5>
+         <i class="icon ion-ios-briefcase-outline"></i>
+        </ion-item>
+
+        <ion-item class="item-icon-right" id="menu-list-item1" ui-sref="menu.buscaservico"  menu-close="">Avaliações
+        <h5></h5>
+          <i class="icon ion-ios-star-half energized"></i>
+        </ion-item>
+        <!-- <ion-item class="item-icon-right" id="menu-list-item39" ui-sref="menu.secretaria" menu-close="">Secretaria
+          <i class="icon ion-ios-box"></i>
+        </ion-item> -->
+        <ion-item class="item-icon-right" id="menu-list-item3" ui-sref="menu.configuracoes" menu-close="">Configurações
+         <i class="icon ion-ios-settings"></i>
+        </ion-item>
+        <ion-item class="item-icon-right" id="menu-list-item40" ng-click="sairApp();">Sair
+          <i class="icon ion-log-out assertive"></i>
+        </ion-item>
+      </ion-list>
+    </ion-content>
+  </ion-side-menu>
+</ion-side-menus>

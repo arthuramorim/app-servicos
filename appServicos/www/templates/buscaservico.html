@@ -1,0 +1,53 @@
+<ion-view title="Buscar Serviços" id="page4" hide-nav-bar="true">
+<style type="text/css">
+
+  input::placeholder {
+    color: #000 !important;
+}
+</style>
+<div class = "item item-text-wrap item-calm" style="text-align: center;" >
+      Preencha os campos e selecione o nível profissional, listaremos os melhores profissionais!
+   </div>
+<h3 ></h3>
+  <ion-content padding="true" class="has-header" >
+    <img src="" style="display:block;width:50%;height:auto;margin-left:auto;margin-right:auto;padding-bottom:10%;padding-top: 60px;">
+    <form id="login-form1" class="list">
+      <ion-list id="login-list2">
+   
+
+    <label class = "item item-input item-select item-light">
+      <div class = "input-label">
+         Categoria
+      </div>
+      <select ng-options="categoria.nome for categoria in categorias " ng-model="campoCategoria">
+          <option selected value="">Selecione</option>
+      </select>
+   </label>
+
+    <div class="spacer" style="width: 300px; height: 24px;"></div>
+    
+    <label class = "item item-input item-select item-light" ng-hide="!campoCategoria">
+      <div class = "input-label">
+         Serviço
+      </div>
+      <select ng-options="servico.nome for servico in servicos | filter:{ catser_id : campoCategoria.catser_id }" ng-model="campoServico">
+         <option selected value="">Selecione</option>
+      </select>
+   </label>
+   <div class="spacer" style="width: 300px; height: 24px;"></div>
+  <!--  <div class="item range" ng-if="campoServico && campoCategoria">
+   <label>1</label>
+   <i class="icon ion-android-star-outline energized"></i>
+   <input type="range" name="volume" ng-model="rangeValue">
+   <input type="range" min="0" max="5" ng-model="campoNivel" list="tickmarks">
+
+
+   <label>5</label>
+   <i class="icon ion-android-star energized"></i>
+    </div> -->
+      </ion-list>
+      <div class="spacer" style="width: 300px; height: 24px;"></div>
+      <a ng-model="button" id="login-button1" ui-sref="menu.listaprofissional({servico:campoServico.servico_id})" class="button button-calm  button-full" ng-disabled="!campoCategoria || !campoServico">BUSCAR</a>
+    </form>
+  </ion-content>
+</ion-view>

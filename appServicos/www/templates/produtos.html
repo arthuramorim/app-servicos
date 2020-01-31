@@ -1,0 +1,48 @@
+<ion-view title="Produtos" id="page1">
+<div class="spacer" style="width: 300px; height: 42px;"></div>
+<label class="item item-input" id="produto-search1">
+        <i class="icon ion-search placeholder-icon"></i>
+        <input type="search" placeholder="Buscar" ng-model="buscaProduto">
+      </label>
+  <ion-content padding="true" class="has-header">
+    <form id="produto-form2" class="list">
+      <div class="spacer" style="width: 300px; height: 42px;"></div>
+      
+      <ion-list ng-repeat="produto in produtos | filter:buscaProduto" >
+
+        <!-- <ion-item  ng-click="showConfirm('{{produto.nome}}', {{produto.RA}}, {{produto.codperlet}})"> -->
+       
+        <div class = "card">
+         <div class = "item">
+            <h2>{{produto.product_title}}</h2>
+         </div>
+
+         <div class = "item item-body">
+
+            <img class = "full-image" src = "{{produto.image_url}}">
+            <div class = "item">
+            
+            <div class="item">Preço: <b><span style="font-size: 18px; color: red;">${{produto.sale_price}}</span></b>
+            <h2 style="text-decoration: line-through; font-size: 14px; ">Original: ${{produto.orig_price}} 
+                </h2>
+            </div>
+            
+                <div class="item item-text-wrap">
+                  <b>Marca</b>
+                  <p>{{produto.brand}}</p>
+                  <b>Descrição</b>
+                  <p>{{produto.description}}</p>
+                </div>
+                  <a class = "button button-full button-assertive" target="_blank" href="{{produto.promotion_url}}">Detalhes | Comprar</a>
+            </div>
+              
+         </div>
+        </div>
+        </div>
+      </ion-list>
+    </form>
+    <div class="spacer" style="width: 300px; height: 39px;"></div>
+  </ion-content>
+</ion-view>
+
+

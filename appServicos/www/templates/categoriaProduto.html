@@ -1,0 +1,23 @@
+<ion-view title="Categoria" id="page1">
+<div class="spacer" style="width: 300px; height: 42px;"></div>
+<label class="item item-input" id="categoria-search1">
+        <i class="icon ion-search placeholder-icon"></i>
+        <input type="search" placeholder="Buscar" ng-model="buscaCategoria">
+      </label>
+  <ion-content padding="true" class="has-header">
+    <form id="categoria-form2" class="list">
+      <div class="spacer" style="width: 300px; height: 42px;"></div>
+      
+      <ion-list ng-repeat="categoria in categorias | filter:buscaCategoria" >
+
+        <!-- <ion-item  ng-click="showConfirm('{{categoria.nome}}', {{categoria.RA}}, {{categoria.codperlet}})"> -->
+        <ion-item ui-sref="menu.produtos({category:categoria.category_id})"> 
+          <h3>{{categoria.nome_ptbr}}<h5>{{categoria.nome}}</h5></h3>
+        </ion-item>
+      </ion-list>
+    </form>
+    <div class="spacer" style="width: 300px; height: 39px;"></div>
+  </ion-content>
+</ion-view>
+
+

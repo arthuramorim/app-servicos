@@ -1,0 +1,25 @@
+<ion-view title="Login" id="page4" hide-nav-bar="true">
+<style type="text/css">
+
+  input::placeholder {
+    color: #000 !important;
+}
+</style>
+  <ion-content padding="true" class="has-header" >
+    <img src="" style="display:block;width:50%;height:auto;margin-left:auto;margin-right:auto;padding-bottom:10%;padding-top: 60px;">
+    <form id="login-form1" class="list">
+      <ion-list id="login-list2">
+        <label class="item item-input item-stacked-label" id="login-input2">
+          <input id="usuario" type="text" placeholder="CPF" ng-model="login.user" ng-disabled="disableButton" value="">
+        </label>
+        <div class="spacer" style="width: 300px; height: 24px;"></div>
+        <label class="item item-input item-stacked-label" id="login-input2">
+          <input id="senha" type="password" placeholder="SENHA" ng-model="login.pwd" ng-disabled="disableButton" value="">
+        </label>
+         <span class="input-label">{{retornoStatus}}</span>
+      </ion-list>
+      <div class="spacer" style="width: 300px; height: 24px;"></div>
+      <a ng-model="button" id="login-button1" ng-click="Logar(login)" class="button button-assertive  button-full" ng-disabled="!login.user || !login.pwd ">Acessar</a>
+    </form>
+  </ion-content>
+</ion-view>

@@ -1,0 +1,105 @@
+
+<ion-view title="Perfil" id="page1">
+<div class="spacer" style="width: 300px; height: 42px;"></div>
+      <!-- <label class="item item-input" id="profissional-search1">
+        <i class="icon ion-search placeholder-icon"></i>
+        <input type="search" placeholder="Buscar" ng-model="buscaprofissional">
+      </label> -->
+  <ion-content padding="true" class="has-header">
+    
+      <div class="spacer" style="width: 300px; height: 42px;"></div>
+      
+      <ion-list>
+
+      <div class="list card">
+
+  <div class="item item-avatar" style="min-height: 133px;
+    padding-left: 133px;">
+    <img src="http://localhost/appservicos/api/public/img/perfil/{{profissional[0].img_perfil}}" style="max-width: 100px;
+max-height: 100px;
+width: 100%;
+height: 100%;
+border-radius: 0;">
+    <h2>{{profissional[0].nome}}</h2>
+    <p>{{profissional[0].contato}}</p>
+<a ng-disabled="profissional[0].ocupado" class="button button-full button-assertive" target="_blank" ng-click="fecharNegociacao(profissional)" style="float: right; position: absolute;">Fechar Negociação</a>
+
+  </div>
+
+  <div class="item item-body">
+    <!-- <img class="full-image" src="delorean.jpg"> -->
+    <label ng-if="profissional[0].ocupado" style="color: red;">Não pode ser contratado, em serviço</label>
+    <p>
+      {{profissional[0].biografia}}
+    </p>
+    <p>
+      <a href="" class="subdued">
+        <i ng-if="1 <= (profissional[0].estrelas/profissional[0].quantidade)" class="icon icon ion-star energized"></i>
+        <i ng-if="2 <= (profissional[0].estrelas/profissional[0].quantidade)" class="icon icon ion-star energized"></i>
+        <i ng-if="3 <= (profissional[0].estrelas/profissional[0].quantidade)" class="icon icon ion-star energized"></i>
+        <i ng-if="4 <= (profissional[0].estrelas/profissional[0].quantidade)" class="icon icon ion-star energized"></i>
+        <i ng-if="5 <= (profissional[0].estrelas/profissional[0].quantidade)" class="icon icon ion-star energized"></i>
+      </a>
+      <a href="" class="subdued">{{profissional[0].quantidade}} requisições</a>
+      
+      <ion-list>
+        <div
+        ng-repeat="group in groups">
+          <ion-item class="item-stable"
+                    ng-click="toggleGroup(group)"
+                    ng-class="{active: isGroupShown(group)}">
+              <i class="icon" ng-class="isGroupShown(group) ? 'ion-minus' : 'ion-plus'"></i>
+            &nbsp;
+            Comentários
+          </ion-item>
+          <div class="item range" ng-show="isGroupShown(group)">
+   <label>1</label>
+   <i class="icon ion-android-star-outline energized"></i>
+   <!-- <input type="range" name="volume" ng-model="rangeValue"> -->
+   <input type="range" min="0" max="5" ng-model="campoNivel" list="tickmarks">
+
+
+   <label>5</label>
+   <i class="icon ion-android-star energized"></i><!-- 
+   <ion-checkbox ng-model="isChecked"></ion-checkbox> -->
+    </div>
+          <ion-item class="item-accordion"
+                    ng-repeat="comentario in comentarios | filter: {estrelas:campoNivel}"
+                    ng-show="isGroupShown(group)">
+            <p>{{comentario.comentario}}
+            <br>
+            <a href="" class="subdued">
+        <i ng-if="1 <= comentario.estrelas" class="icon icon ion-star energized"></i>
+        <i ng-if="2 <= comentario.estrelas" class="icon icon ion-star energized"></i>
+        <i ng-if="3 <= comentario.estrelas" class="icon icon ion-star energized"></i>
+        <i ng-if="4 <= comentario.estrelas" class="icon icon ion-star energized"></i>
+        <i ng-if="5 <= comentario.estrelas" class="icon icon ion-star energized"></i>
+      </a></p>
+          </ion-item>
+        </div>
+      </ion-list>
+    </p>
+  </div>
+
+</div>
+       <!-- <div style="padding-bottom: 20px;">
+           <ion-item class = "item item-avatar" style="min-height:100px; padding-left: 100px;">
+              <img src ="http://localhost/appservicos/api/public/img/perfil/{{profissional[0].img_perfil}}" style="max-width: 70px;max-height: 70px;width: 100%;height: 100%;border-radius: 0;">
+              {{profissional[0].nome}}<br>
+              <h4 >
+                  <i ng-if="1 <= (profissional[0].estrelas/profissional[0].quantidade)" class="icon icon ion-star energized"></i>
+                  <i ng-if="2 <= (profissional[0].estrelas/profissional[0].quantidade)" class="icon icon ion-star energized"></i>
+                  <i ng-if="3 <= (profissional[0].estrelas/profissional[0].quantidade)" class="icon icon ion-star energized"></i>
+                  <i ng-if="4 <= (profissional[0].estrelas/profissional[0].quantidade)" class="icon icon ion-star energized"></i>
+                  <i ng-if="5 <= (profissional[0].estrelas/profissional[0].quantidade)" class="icon icon ion-star energized"></i>
+                  <h5>Contratado: {{profissional[0].quantidade}}x</h5>
+              </h4>
+
+
+           </ion-item>
+        </div> -->
+      </ion-list>
+  </ion-content>
+</ion-view>
+
+
